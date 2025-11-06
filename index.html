@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Karmic Solutions Meals</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    
+    <div class="top-actions">
+      <a href="index.html" class="btn-outline">Home</a>
+      <a href="signup.html" class="btn">Sign Up</a>
+    </div>
+  </header>
+
+  <main class="hero">
+    <h1>Daily Meal Selection Made Simple</h1>
+    <p>Manage meals efficiently for employees and administrators at Karmic Solutions.</p>
+  </main>
+
+  <section class="login-section" id="login">
+    <div class="login-card">
+      <h2>Login Portal</h2>
+      <div class="login-toggle">
+        <button class="toggle-btn active" id="employeeBtn">Employee</button>
+        <button class="toggle-btn" id="adminBtn">Admin</button>
+      </div>
+
+      <div class="form-container" id="employeeLogin">
+        <input id="empEmail" type="email" placeholder="you@karmic.co.in" />
+        <input id="empPassword" type="password" placeholder="Password" />
+        <button class="btn-primary full" onclick="loginUser('employee')">Employee Login</button>
+      </div>
+
+      <div class="form-container hidden" id="adminLogin">
+        <input id="adminEmail" type="email" placeholder="admin@karmic.co.in" />
+        <input id="adminPassword" type="password" placeholder="Password" />
+        <button class="btn-primary full" onclick="loginUser('admin')">Admin Login</button>
+      </div>
+
+      <p id="loginMsg" class="muted small-text"></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Karmic Solutions Meals. All rights reserved.</p>
+  </footer>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

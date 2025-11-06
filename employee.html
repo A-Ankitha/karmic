@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Employee — Meal Confirmation</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">🍽️ Karmic — Employee</div>
+    <div>
+      <button id="notifyReqBtn" class="nav-btn">Enable Reminders</button>
+      <button onclick="logout()" class="nav-btn">Logout</button>
+    </div>
+  </header>
+  <h2 id="employeeName"></h2>
+
+<button id="confirmBtn">Confirm Selection</button>
+
+<button id="logoutBtn" style="margin-top:20px;">Logout</button>
+
+<script src="js/employee.js"></script>
+
+  <main class="container">
+    <h2>Confirm Meals for <span id="targetDateLabel"></span></h2>
+    <p id="deadlineMsg" class="small-text"></p>
+
+    <section id="menuSections">
+      <!-- Breakfast / Lunch / Snacks will be rendered here -->
+    </section>
+
+    <div style="margin-top:12px">
+      
+      <button id="optOutBtn" class="btn-outline">Opt-Out (No Meal)</button>
+      <button id="cancelSelection" class="btn-outline">Cancel / Clear Selection</button>
+    </div>
+
+    <h3 style="margin-top:18px">Your current choice</h3>
+    <div id="currentChoice">— Not confirmed yet</div>
+
+    <h3 style="margin-top:18px">History / Other info</h3>
+    <div id="historyList"></div>
+
+  </main>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/employee-module.js"></script>
+</body>
+</html>

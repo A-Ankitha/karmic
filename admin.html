@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin - Canteen Admin</title>
+<link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<header class="header">
+<div class="logo">🍽️ Canteen Admin</div>
+<div>
+<button id="generateReportBtn" class="nav-btn">Generate Report (now)</button>
+<button onclick="logout()" class="nav-btn">Logout</button>
+</div>
+</header>
+
+
+<main class="container">
+<h2>Menu management & Reports</h2>
+
+
+<div class="form-row">
+<label for="menuDate">Menu Date</label>
+<input id="menuDate" type="date">
+</div>
+
+
+<div class="form-row">
+<input id="itemName" type="text" placeholder="Item name">
+<input id="itemPrice" type="number" placeholder="Price (₹)">
+<button id="addItemBtn" class="primary-btn">Add Item</button>
+</div>
+
+
+<h3>Menu for <span id="menuDateLabel"></span></h3>
+<table id="menuTable" class="styled-table">
+<thead>
+<tr><th>Item</th><th>Price (₹)</th><th>Actions</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+
+
+<h3>Bookings for <span id="menuDateLabel2"></span></h3>
+<div>
+<button id="refreshBookings" class="btn-outline">Refresh Bookings</button>
+<button id="downloadCsv" class="btn-outline">Download CSV</button>
+</div>
+<table id="bookingTable" class="styled-table" style="margin-top:12px;">
+<thead>
+<tr><th>Item</th><th>Qty</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+
+
+<h3>Generated Reports (historical)</h3>
+<ul id="reportsList"></ul>
+</main>
+
+
+<footer class="footer">© Canteen</footer>
+
+
+<script src="../js/utils.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

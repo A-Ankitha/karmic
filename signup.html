@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sign up — Karmic</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+ 
+  <header class="header">
+    <h1 class="logo">🍽️ Karmic Solutions Meals</h1>
+  </header>
+
+  <div class="signup-container">
+    <a href="index.html">← Back to Login</a>
+    <h2>Create Account</h2>
+
+    <form id="signupForm">
+  <input type="text" id="name" placeholder="Full Name" required>
+  <input type="email" id="email" placeholder="Email (xxxx@karmic.co.in)" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <input type="text" id="employeeId" placeholder="Employee ID" required>
+  <input type="tel" id="mobile" placeholder="Mobile Number" required>
+  
+  <select id="location" required>
+    <option value="">Select Work Location</option>
+    <option value="Main Office">Main Office</option>
+    <option value="Work From Home">Work From Home</option>
+    <option value="Other">Other</option>
+  </select>
+  
+  <button type="submit">Create Account</button>
+</form>
+
+<script src="js/auth.js"></script>
+
+  <script>
+  const signupForm = document.getElementById("signupForm");
+
+  signupForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const employeeId = document.getElementById("employeeId").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const location = document.getElementById("location").value;
+
+    if (!email.endsWith("@karmic.co.in")) {
+      alert("Please use your official Karmic email (xxxx@karmic.co.in)");
+      return;
+    }
+
+    // Check if already registered
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    const exists = users.some((u) => u.email === email);
+    if (exists) {
+      alert("Account already exists with this email.");
+      return;
+    }
+
+    // Save new user
+    users.push({ fullName, employeeId, mobile, email, password, location });
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("✅ Registration successful! Redirecting to login...");
+    window.location.href = "login.html"; // redirect after success
+  });
+</script>
+
+</body>
+
+</html>
