@@ -18,7 +18,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  color: rgb(236, 115, 115);
+  color: rgb(147, 9, 92);
 }
 
 .logo {
@@ -27,7 +27,7 @@ body {
 }
 
 .nav-btn {
-  background: rgb(219, 105, 105);
+  background: rgb(147, 9, 92);
   border: none;
   color: #f972d5;
   font-weight: 600;
@@ -301,4 +301,90 @@ body {
   margin: 5px 0;
   padding: 8px;
   border-radius: 6px;
+}
+/* Signup Page Styling (Match Login UI) */
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+/* Back link */
+.signup-container a {
+  align-self: flex-start;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #c85be4;
+  font-weight: 500;
+}
+
+.signup-container a:hover {
+  text-decoration: underline;
+}
+
+/* Card */
+.signup-container form {
+  background: #fff;
+  border: 1px solid #ffe0c2;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 30px 35px;
+  width: 100%;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Title */
+.signup-container h2 {
+  margin-bottom: 15px;
+  color: #ee68fa;
+  text-align: center;
+}
+
+/* Inputs */
+.signup-container input,
+.signup-container select {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ffd9b0;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Full width fields */
+.signup-container input[type="email"],
+.signup-container input[type="password"],
+.signup-container select {
+  grid-column: span 2;
+}
+
+/* Focus effect */
+.signup-container input:focus,
+.signup-container select:focus {
+  outline: none;
+  border-color: #f368ce;
+  box-shadow: 0 0 0 3px rgba(255,140,66,0.15);
+}
+
+/* Button */
+.signup-container button {
+  grid-column: span 2;
+  background: #e959e6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.signup-container button:hover {
+  background: #ce5ddf;
 }
